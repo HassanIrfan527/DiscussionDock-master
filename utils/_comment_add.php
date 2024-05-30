@@ -14,7 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $thread_id = $_POST['thread_id'];
     $category_id = $_POST['category_id'];
-    $comment_content = $_POST['comment_content'];
+
+    $safe_input = filter_input(INPUT_POST, 'comment_content', FILTER_SANITIZE_SPECIAL_CHARS);
+    $comment_content = htmlspecialchars($safe_input, ENT_QUOTES, 'UTF-8');
+
 
     $query_insert_comment = $mysql->prepare('INSERT INTO `comments` (`comment_txt`,`comment_user_id`,`comment_thread_id`) VALUES (?,?,?)');
     $query_insert_comment->bind_param('sii', $comment_content, $row_user['user_id'], $thread_id);

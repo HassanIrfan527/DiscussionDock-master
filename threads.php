@@ -49,8 +49,8 @@
     if (isset($_GET['category_id']) && isset($_GET['thread_id'])) :
         $category_id = $_GET['category_id'];
         $thread_id = $_GET['thread_id'];
-        $query = $mysql->prepare('SELECT * FROM `threads` WHERE `thread_cat_id`=?');
-        $query->bind_param('s', $category_id);
+        $query = $mysql->prepare('SELECT * FROM `threads` WHERE `thread_id`=?');
+        $query->bind_param('s', $thread_id);
         $query->execute();
         $row = $query->get_result()->fetch_assoc();
 
@@ -96,7 +96,7 @@
             <div class="col-md-8">
                 <div class="d-flex flex-column comment-section">
                     <?php
-                    if ($resultComments != false) :
+                    if ($resultComments) :
                         while ($rowComments = $resultComments->fetch_assoc()) :
 
                             // Fetching User data who posted the comment
@@ -119,7 +119,7 @@
                                     <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name"> &ThickSpace; <?php echo htmlspecialchars($rowCommentUser['username']); ?></span><span class="date text-black-50"> &ThickSpace; Shared publicly - <?php echo htmlspecialchars($formattedDate); ?></span></div>
                                 </div>
                                 <div class="mt-2">
-                                    <p class="comment-text"><?php echo htmlspecialchars($rowComments['comment_txt']); ?></p>
+                                    <p class="comment-text"><?php echo htmlspecialchars_decode($rowComments['comment_txt']); ?></p>
                                 </div>
                             </div>
                         <?php endwhile; ?>
@@ -144,11 +144,12 @@
                                 <p>Please Sign in to post a Comment</p>
                             </div>
                         <?php endif; ?>
+
                 </div>
             </div>
         </div>
     </div>
-<?php else : ?>
+<?php else: ?>
     <div class="container bg-light text-center">
         <h1>No Comments</h1>
         <p>Wait for someone to Post a question</p>

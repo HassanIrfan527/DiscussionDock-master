@@ -33,8 +33,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   if ($_POST['action'] == 'add-comment') {
 
-    $title = $_POST['title'];
-    $concern = $_POST['concern'];
+    $safe_input = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
+    $title = htmlspecialchars($safe_input, ENT_QUOTES, 'UTF-8');
+
+
+    $safe_input1 = filter_input(INPUT_POST, 'concern', FILTER_SANITIZE_SPECIAL_CHARS);
+    $concern = htmlspecialchars($safe_input1, ENT_QUOTES, 'UTF-8');
+    
     $category_id = $_GET['category_id'];
     $user_id = get_id($_SESSION['username'],$mysql);
     $query = $mysql->prepare('INSERT INTO `threads` (`thread_title`,`thread_desc`,`thread_cat_id`,`thread_user_id`) VALUES (?,?,?,?)');
