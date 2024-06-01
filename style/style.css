@@ -107,3 +107,9 @@ footer a{
   right: 0;
   z-index: 1;
 }
+
+.search{
+
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
