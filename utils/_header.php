@@ -15,8 +15,11 @@
     </ul>
 
     <div class="col-md-3 text-end">
-      
+
+
+
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+
         <li class="nav-item dropdown" data-bs-theme="dark">
           <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -28,7 +31,9 @@
             <li class="text-center" style="font-size: 14px;">Hello , ' . $_SESSION['username'] . ' </li>
             <li><a class="dropdown-item" href="/forum/profile.php">My Account</a></li>
             <li>
+
               <hr class="dropdown-divider">
+
             </li>
             <li><a class="dropdown-item" href="/forum/logout.php">Log Out</a></li>
           </ul>
@@ -59,5 +64,5 @@
       <button type="button" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Sign-up</button>
 
     </div>
-  </header>';
+  </header>
 <?php endif; ?>

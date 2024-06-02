@@ -110,6 +110,9 @@ footer a{
 
 .search{
 
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
+  border-radius: 25px;
+}
+.search ion-icon{
+  font-size: 20px;
+
 }

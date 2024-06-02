@@ -5,12 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Discussion-Dock | An online forum for programmers</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style/style1.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="resources/apple-touch-icon.png">
@@ -62,16 +65,19 @@
     <section class="custom-sec sec-1">
         <div class="bg-white text-secondary px-4 py-5 text-center">
             <?php if (isset($_SESSION['logged-in']) && $_SESSION['logged-in']) : ?>
-                <?php {
+            <?php {
                     echo 'Welcome , ' . $_SESSION['username'] . ' ! ';
                 };  ?>
-                <div class="py-5" style="width: 100%; height:100%;">
-                    <h1 class="display-5 fw-bold text-dark">Discussion Dock</h1>
-                    <div class="col-lg-6 mx-auto">
-                        <p class="fs-5 mb-4 text-dark">Discussion-Dock is a vibrant online forum dedicated to programmers of all skill levels and backgrounds. Our mission is to foster a supportive and engaging community where developers can share knowledge, collaborate on projects, and grow-custom their technical skills.</p>
-                        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <div class="py-5" style="width: 100%; height:100%;">
+                <h1 class="display-5 fw-bold text-dark">Discussion Dock</h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="fs-5 mb-4 text-dark">Discussion-Dock is a vibrant online forum dedicated to programmers of
+                        all skill levels and backgrounds. Our mission is to foster a supportive and engaging community
+                        where developers can share knowledge, collaborate on projects, and grow-custom their technical
+                        skills.</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                         <?php else : ?>
-                            <?php {
+                        <?php {
                                 echo '<div class="py-5" style="width: 100%; height:100%;">
                 <h1 class="display-5 fw-bold text-dark">Discussion Dock</h1>
                 <div class="col-lg-6 mx-auto">
@@ -81,9 +87,9 @@
                             }
                             ?>
                         <?php endif; ?>
-                        </div>
                     </div>
                 </div>
+            </div>
         </div>
 
     </section>
@@ -192,32 +198,34 @@
 
 
     <?php include 'utils/_footer.php'; ?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="utils/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script>
-        function setCookie(name, value, days) {
-            const date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            const expires = "expires=" + date.toUTCString();
-            document.cookie = name + "=" + value + ";" + expires + ";path=/";
-        }
-        const cookieBox = document.querySelector(".wrapper"),
-            acceptBtn = cookieBox.querySelector(".allow-btn"),
-            dismissBtn = cookieBox.querySelector(".dismiss-btn");
-        acceptBtn.onclick = () => {
-            cookieBox.classList.add('hide')
-            setCookie('allow', true, 30)
-        }
-        dismissBtn.onclick = () => {
-            cookieBox.classList.add('hide')
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+    const cookieBox = document.querySelector(".wrapper"),
+        acceptBtn = cookieBox.querySelector(".allow-btn"),
+        dismissBtn = cookieBox.querySelector(".dismiss-btn");
+    acceptBtn.onclick = () => {
+        cookieBox.classList.add('hide')
+        setCookie('allow', true, 30)
+    }
+    dismissBtn.onclick = () => {
+        cookieBox.classList.add('hide')
 
-        }
-        if (localStorage.getItem('allow')) {
-            cookieConsent.classList.add('hide')
-        }
+    }
+    if (localStorage.getItem('allow')) {
+        cookieConsent.classList.add('hide')
+    }
     </script>
 
 </body>
